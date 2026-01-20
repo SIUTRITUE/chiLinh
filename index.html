@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chúc mừng chị Linh tốt nghiệp 🎓</title>
   <meta name="theme-color" content="#0b1020" />
+  <!-- Load a Vietnamese-friendly UI font to avoid diacritic/coverage issues -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg1:#0b1020;
@@ -22,7 +24,8 @@
     html,body{ height:100%; }
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      /* Prefer Noto Sans (good Vietnamese coverage) then fall back to system fonts */
+      font-family: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
       color:var(--txt);
       background:
         radial-gradient(1000px 500px at 10% 10%, rgba(255,122,217,.25), transparent 55%),
