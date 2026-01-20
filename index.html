@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chúc mừng chị Linh tốt nghiệp 🎓</title>
+  <meta name="theme-color" content="#0b1020" />
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#101a3a;
+      --card: rgba(255,255,255,.08);
+      --stroke: rgba(255,255,255,.16);
+      --txt: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --gold1:#ffd38a;
+      --gold2:#ff7ad9;
+      --blue1:#74c0ff;
+      --blue2:#9b8cff;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 24px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--txt);
+      background:
+        radial-gradient(1000px 500px at 10% 10%, rgba(255,122,217,.25), transparent 55%),
+        radial-gradient(900px 450px at 85% 25%, rgba(116,192,255,.22), transparent 55%),
+        radial-gradient(800px 400px at 55% 90%, rgba(155,140,255,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      overflow:hidden;
+    }
+
+    /* subtle animated grain */
+    .grain{
+      pointer-events:none;
+      position:fixed; inset:-50%;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      opacity:.10;
+      transform:translate3d(0,0,0);
+      animation: drift 12s linear infinite;
+      mix-blend-mode: overlay;
+    }
+    @keyframes drift{
+      from{ transform:translate(-2%, -2%); }
+      to{ transform:translate(2%, 2%); }
+    }
+
+    .wrap{
+      min-height:100%;
+      display:grid;
+      place-items:center;
+      padding:28px 18px;
+    }
+
+    .card{
+      width:min(980px, 100%);
+      position:relative;
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      border:1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .glow{
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(500px 200px at 20% 10%, rgba(255,211,138,.30), transparent 60%),
+        radial-gradient(420px 220px at 85% 30%, rgba(116,192,255,.22), transparent 62%),
+        radial-gradient(460px 260px at 50% 110%, rgba(255,122,217,.18), transparent 60%);
+      filter: blur(6px);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .content{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      padding:34px;
+    }
+
+    @media (max-width: 860px){
+      .content{ grid-template-columns:1fr; padding:26px; }
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      width:fit-content;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .badge .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--gold1), var(--gold2));
+      box-shadow: 0 0 20px rgba(255,122,217,.35);
+    }
+
+    h1{
+      margin:16px 0 10px;
+      font-size: clamp(30px, 3.8vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.02em;
+    }
+
+    .grad{
+      background: linear-gradient(90deg, #ffffff, var(--gold1), var(--blue1));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    p{
+      margin: 0 0 14px;
+      color:var(--muted);
+      font-size: 16.5px;
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    .stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 16px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(15,25,55,.45);
+      color: rgba(255,255,255,.82);
+      font-size: 13.5px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .pill svg{ opacity:.9; }
+
+    .cta{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top: 22px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:0;
+      cursor:pointer;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 15px;
+      color: rgba(10,12,20,.95);
+      background: linear-gradient(135deg, var(--gold1), var(--blue1));
+      box-shadow: 0 14px 40px rgba(116,192,255,.18);
+      transition: transform .15s ease, filter .15s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn:active{ transform: translateY(1px) scale(.99); }
+
+    .ghost{
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.88);
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-weight: 650;
+      font-size: 15px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      user-select:none;
+    }
+    .ghost:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .ghost:active{ transform: translateY(1px) scale(.99); }
+
+    .right{
+      position:relative;
+      display:grid;
+      place-items:center;
+      padding: 8px 6px;
+    }
+
+    .frame{
+      width:100%;
+      max-width: 360px;
+      aspect-ratio: 3/4;
+      border-radius: 26px;
+      border:1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(240px 180px at 20% 15%, rgba(255,211,138,.22), transparent 60%),
+        radial-gradient(240px 180px at 85% 25%, rgba(116,192,255,.20), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: 0 22px 70px rgba(0,0,0,.35);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .cap{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding: 18px 18px 16px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+    }
+
+    .quote{
+      font-size: 15px;
+      color: rgba(255,255,255,.86);
+      line-height:1.55;
+      margin:0;
+    }
+
+    .sig{
+      margin-top: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,.72);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .spark{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.9), transparent 60%),
+        radial-gradient(1.5px 1.5px at 70% 40%, rgba(255,255,255,.85), transparent 60%),
+        radial-gradient(1.8px 1.8px at 45% 65%, rgba(255,255,255,.8), transparent 60%),
+        radial-gradient(1.4px 1.4px at 82% 75%, rgba(255,255,255,.8), transparent 60%),
+        radial-gradient(1.6px 1.6px at 28% 78%, rgba(255,255,255,.85), transparent 60%);
+      opacity:.65;
+      animation: twinkle 2.6s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle{
+      from{ opacity:.35; transform: translateY(0px); }
+      to{ opacity:.85; transform: translateY(-2px); }
+    }
+
+    /* confetti canvas */
+    canvas#confetti{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .footer{
+      margin-top: 18px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,.55);
+    }
+    .footer code{
+      background: rgba(255,255,255,.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border:1px solid rgba(255,255,255,.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <canvas id="confetti"></canvas>
+
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Thiệp chúc mừng">
+      <div class="glow" aria-hidden="true"></div>
+
+      <div class="content">
+        <div>
+          <div class="badge"><span class="dot"></span> Một cột mốc rực rỡ ✨</div>
+
+          <h1>
+            Chúc mừng <span class="grad">chị Linh</span> tốt nghiệp 🎓
+          </h1>
+
+          <p>
+            Hôm nay là ngày chị “level up” chính thức! Chúc chị luôn giữ được nhiệt huyết,
+            tự tin bước vào hành trình mới, và gặp thật nhiều cơ hội xịn xò phía trước.
+          </p>
+
+          <p>
+            Nhấn nút bên dưới để xem món quà nhỏ mình gửi chị nha 💛
+          </p>
+
+          <div class="stats">
+            <span class="pill" title="Tự hào">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l3 7 7 .5-5.5 4.7 2 7.3L12 17.8 5.5 21.5l2-7.3L2 9.5 9 9l3-7z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              Tự hào về chị
+            </span>
+            <span class="pill" title="Tương lai">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Chặng đường mới
+            </span>
+            <span class="pill" title="May mắn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21s-7-4.6-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.4-7 11-7 11z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              May mắn & hạnh phúc
+            </span>
+          </div>
+
+          <div class="cta">
+            <button class="btn" id="goBtn" type="button">
+              <span>Nhấn để xem bất ngờ</span>
+              <span aria-hidden="true">▶</span>
+            </button>
+
+            <button class="ghost" id="copyBtn" type="button">
+              <span>Sao chép lời chúc</span>
+              <span aria-hidden="true">📋</span>
+            </button>
+          </div>
+
+          <div class="footer">
+            Tip: Nếu muốn đổi tên/ngày, mở file <code>index.html</code> và sửa text là xong.
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="frame" aria-label="Khung thiệp">
+            <div class="spark" aria-hidden="true"></div>
+            <div class="cap">
+              <p class="quote">
+                “Tốt nghiệp không phải là điểm kết thúc, mà là nút <b>Start</b> cho phiên bản rực rỡ hơn.”
+              </p>
+              <div class="sig">
+                <span>🎓 Congrats, Linh!</span>
+                <span>— From: bạn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const YT_LINK = "https://youtube.com/shorts/48r-5ZA8RIk";
+
+    // Copy wish text
+    const copyBtn = document.getElementById("copyBtn");
+    copyBtn.addEventListener("click", async () => {
+      const text = "Chúc mừng chị Linh tốt nghiệp 🎓✨ Chúc chị luôn tự tin, gặp nhiều cơ hội tốt và hạnh phúc trên chặng đường mới! 💛";
+      try{
+        await navigator.clipboard.writeText(text);
+        copyBtn.innerHTML = "<span>Đã sao chép!</span><span aria-hidden='true'>✅</span>";
+        setTimeout(() => copyBtn.innerHTML = "<span>Sao chép lời chúc</span><span aria-hidden='true'>📋</span>", 1500);
+      }catch(e){
+        alert("Không sao chép được. Bạn có thể copy thủ công:\n\n" + text);
+      }
+    });
+
+    // Confetti (simple, lightweight)
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    let W, H, raf;
+    const pieces = [];
+    const rand = (a,b)=>Math.random()*(b-a)+a;
+
+    function resize(){
+      W = canvas.width = window.innerWidth * devicePixelRatio;
+      H = canvas.height = window.innerHeight * devicePixelRatio;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+    }
+    window.addEventListener("resize", () => {
+      // reset scale properly
+      canvas.width = window.innerWidth * devicePixelRatio;
+      canvas.height = window.innerHeight * devicePixelRatio;
+    });
+
+    function spawnConfetti(count=140){
+      pieces.length = 0;
+      for(let i=0;i<count;i++){
+        pieces.push({
+          x: rand(0, window.innerWidth),
+          y: rand(-60, -10),
+          w: rand(6, 10),
+          h: rand(10, 16),
+          r: rand(0, Math.PI*2),
+          vr: rand(-0.18, 0.18),
+          vx: rand(-1.4, 1.4),
+          vy: rand(2.2, 4.8),
+          g: rand(0.02, 0.06),
+          // nice pastel-ish palette
+          c: ["#ffd38a","#74c0ff","#ff7ad9","#9b8cff","#a7f3d0","#fde68a"][Math.floor(rand(0,6))]
+        });
+      }
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,window.innerWidth, window.innerHeight);
+      for(const p of pieces){
+        p.vy += p.g;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.r += p.vr;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.r);
+        ctx.fillStyle = p.c;
+        ctx.globalAlpha = 0.95;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+      }
+      // stop after offscreen
+      if(pieces.every(p => p.y > window.innerHeight + 80)){
+        cancelAnimationFrame(raf);
+        raf = null;
+        return;
+      }
+      raf = requestAnimationFrame(draw);
+    }
+
+    function blast(){
+      spawnConfetti(160);
+      if(raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(draw);
+    }
+
+    // Button action: confetti + open link
+    const goBtn = document.getElementById("goBtn");
+    goBtn.addEventListener("click", () => {
+      blast();
+      // small delay so effect is visible before leaving
+      setTimeout(() => window.open(YT_LINK, "_blank", "noopener,noreferrer"), 450);
+    });
+  </script>
+</body>
+</html>
