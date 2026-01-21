@@ -32,7 +32,9 @@
         radial-gradient(900px 450px at 85% 25%, rgba(116,192,255,.22), transparent 55%),
         radial-gradient(800px 400px at 55% 90%, rgba(155,140,255,.18), transparent 60%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
-      overflow:hidden;
+      /* Allow page scrolling on mobile — previously overflow:hidden prevented scrolling */
+      overflow:auto;
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
     }
 
     .grain{
